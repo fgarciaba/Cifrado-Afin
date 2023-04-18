@@ -1,6 +1,6 @@
-function recogerTextoCifrado(){
+function cifrador(){
   var text = document.getElementById("texto").value;
-  var lim = limpiarTexto(text);
+  var lim = limpiar(text);
   var a = document.getElementById("a").value;
   var a2 = parseInt(a,10);
   var b = document.getElementById("b").value;
@@ -10,25 +10,12 @@ function recogerTextoCifrado(){
 }
 
 
-function recogerTextoDescifrado(){
+function descifrador(){
   var cif = document.getElementById("textoCifrado").value;
   var fre = frecuencia(cif);
   var des = descifrado(cif,fre.varra1,fre.varra2);  
   document.getElementById("textoDescifrado").value = des.plaintext;
   document.getElementById("textoDescifrado2").value = des.plaintext2;
-}
-
-
-function limpiarTexto(texto) {
-  var mapaCaracteres = {
-    "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u", "ü": "u",
-    "Á": "A", "É": "E", "Í": "I", "Ó": "O", "Ú": "U", "Ü": "U",
-  };
-  var expresionRegular = /[\s.,\/#!$%\^&\*;:{}=\-_`~()\n0-9]/g;
-  function reemplazo(caracter) {
-    return mapaCaracteres[caracter] || caracter;
-  }
-  return texto.replace(expresionRegular, "").replace(/[áéíóúüÁÉÍÓÚÜ]/g, reemplazo).toUpperCase();
 }
 
 
@@ -144,6 +131,18 @@ function descifrado(ciphertext, varra1, varra2) {
   return {plaintext, plaintext2};
 }
 
+
+function limpiar(texto) {
+  var mapaCaracteres = {
+    "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u", "ü": "u",
+    "Á": "A", "É": "E", "Í": "I", "Ó": "O", "Ú": "U", "Ü": "U",
+  };
+  var expresionRegular = /[\s.,\/#!$%\^&\*;:{}=\-_`~()\n0-9]/g;
+  function reemplazo(caracter) {
+    return mapaCaracteres[caracter] || caracter;
+  }
+  return texto.replace(expresionRegular, "").replace(/[áéíóúüÁÉÍÓÚÜ]/g, reemplazo).toUpperCase();
+}
 
 
 
