@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad Cifrado Afin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cuadro1">
+            
+            <h1>Cifrado Afin</h1>
+            <div class="form">
+                <div class="campo">
+                    <label for="texto">Texto a cifrar:</label>
+                    <textarea id="texto" placeholder></textarea>
+                    <label for="a">Valor de a:</label>
+                    <input type="number" id="a">
+                    <label for="b">Valor de b:</label>
+                    <input type="number" id="b">
+                    <button id="cifrar" onclick="recogerTextoCifrado()">Cifrar</button>
+                </div>
+                <div class="campo">
+                    <label for="textoCifrado">Texto cifrado:</label>
+                    <textarea id="textoCifrado" readonly></textarea>
+                </div>
+            
+            </div>
+
+        </div>
+
+        <div class="cuadro2">
+            <h1>Descifrado Afin</h1>
+            <div class="form">
+                
+                <div class="campo">
+                    <label for="textoCifrado">Texto a descifrar:</label>
+                    <textarea id="textoCifrado" placeholder></textarea>
+                    <button id="descifrar" onclick="recogerTextoDescifrado()">Descifrar</button>
+                </div>
+            
+                <div class="campo">
+                    <label for="textoDescifrado">Texto descifrado:</label>
+                    <textarea id="textoDescifrado" readonly></textarea>
+                    
+                </div>
+                <div class="campo">
+                    <label for="textoDescifrado2">Texto descifrado 2:</label>
+                    <textarea id="textoDescifrado2" readonly></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
